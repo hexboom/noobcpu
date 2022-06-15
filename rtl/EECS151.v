@@ -568,13 +568,17 @@ module ASYNC_RAM_1W2R(d0, addr0, we0, q1, addr1, q2, addr2, clk);
       $readmemb(MIF_BIN, mem);
     end
     else begin
-      for (i = 0; i < DEPTH; i = i + 1) begin
-        mem[i] = 0;
+      // for (i = 0; i < DEPTH; i = i + 1) begin
+      //   mem[i] = 0;
+      // end
+      mem[0] = 0; // @@
+      for (i = 1; i < DEPTH; i = i + 1) begin
+        mem[i] = -1;
       end
     end
   end
 
-  always @(posedge clk) begin
+  always @(negedge clk) begin // changed
     if (we0 && addr0!=5'd0) 
         mem[addr0] <= d0;
   end

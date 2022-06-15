@@ -11,11 +11,17 @@
 `define IMM_JTYPE 3'b100
 `define IMM_CSR   3'b101
 
+`define RS1_ADD_IMM 1'b1
+`define PC_ADD_IMM  1'b0
+
 `define A_SEL_PC  1'b1
 `define A_SEL_RS1 1'b0
 
 `define B_SEL_IMM 1'b1
 `define B_SEL_RS2 1'b0
+
+`define BRN_EQ 1'b0
+`define BRN_LT 1'b1
 
 `define ALU_ADD  4'b0000
 `define ALU_SUB  4'b0001
@@ -38,4 +44,10 @@
 `define WB_ALU      3'b010
 `define WB_PCADD4   3'b100 
 
+`define FORW_SRC_EX 2'b00
+`define FORW_SRC_DM 2'b01
+`define FORW_SRC_WB 2'b10
+
+`define FORW_DMEM_DIN_RS2 1'b1
+`define FORW_DMEM_DIN_DMEM 1'b0
 `endif

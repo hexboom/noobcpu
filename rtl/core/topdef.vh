@@ -1,7 +1,11 @@
 `ifndef TOPDEF
 `define TOPDEF
 
-`define PC_WIDTH 16
+`define PC_WIDTH 32
+`define PC_VAL_INIT 32'h0000_0000
+
+`define BIOS_DWIDTH 32
+`define BIOS_AWIDTH 12
 
 `define IMEM_DWIDTH 32
 `define IMEM_AWIDTH 14
